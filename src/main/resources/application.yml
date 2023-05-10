@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: contrasena
+    url: jdbc:postgresql://localhost:5432/todo

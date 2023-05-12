@@ -2,6 +2,7 @@ package com.ignacioillanes.todo.Bl;
 
 import com.ignacioillanes.todo.Dao.TaskDao;
 import com.ignacioillanes.todo.Dto.LabelDto;
+import com.ignacioillanes.todo.Dto.ReqTaskDto;
 import com.ignacioillanes.todo.Dto.TaskDto;
 import com.ignacioillanes.todo.Entity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,14 @@ public class TaskBl {
         });
 
         return res;
+    }
+
+    public TaskDto insertTask(TaskDto taskDto) {
+        Task task = new Task();
+        task.setDescription(taskDto.getDescription());
+        task.setCompleted(taskDto.getCompleted());
+        task.setStatus(false);
+        taskDao.save(task);
+        return taskDto;
     }
 }

@@ -8,11 +8,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TaskDao {
+public class TaskDao{
     @Autowired
     private TaskRepository taskRepository;
 
     public List<Task> getAllTasks() {
         return taskRepository.findAllTasks();
+    }
+
+
+    public void save(Task task) {
+        taskRepository.save(task);
     }
 }

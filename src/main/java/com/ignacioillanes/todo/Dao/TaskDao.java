@@ -13,6 +13,6 @@ public class TaskDao {
     private TaskRepository taskRepository;
 
     public List<Task> getAllTasks() {
-        return taskRepository.findAll();
+        return taskRepository.findAllTasks();
     }
 }
